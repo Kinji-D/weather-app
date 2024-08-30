@@ -1,0 +1,269 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #f3b07c, #fcd283);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.weather img {
+    margin-top: -4rem;
+    width: 100%;
+}
+
+.weather-app {
+    width: 35rem;
+    height: 65rem;
+    background-image: linear-gradient(to top, #f3b07c, #fcd283);
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: -3rem 1rem 6rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.units {
+    position:absolute;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.celsius,
+.fahrenheit {
+    width: 2.5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.celsius:hover,
+.fahrenheit:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.location i {
+    font-size: 2rem;
+    color: #2f2e57;
+}
+
+.location div {
+    font-size: 1.6rem;
+    color: #484569;
+    letter-spacing: 0.1rem;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    width: 25rem;
+    height: 3.5rem;
+    background-color: transparent;
+    border: .2rem solid #676394;
+    border-radius: 3rem;
+    outline: none;
+    padding: 1rem 3rem 1rem 1rem;
+    font-size: 1.6rem;
+    color: #484569
+}
+
+.search-bar input::placeholder {
+    font-size: 1.4rem;
+    color: #676394;
+    letter-spacing: .1rem;
+}
+
+.search-bar input:focus::placeholder {
+    color: transparent;
+}
+
+.search-bar i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #2f2e57;
+    cursor: pointer;
+}
+
+.not-found {
+    font-size: 3rem;
+    color: #484569;
+    margin-top: 5rem;
+    text-shadow: -.3rem .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.weather-type {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #484569;
+}
+
+.temperature {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9rem;
+    background-image: linear-gradient(to right, #2f2e57, #605d80);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.min-max-temperature {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background-image: linear-gradient(to right, #2f2e57, #605d80);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.date {
+    position: absolute;
+    bottom: 24%;
+    font-size: 1.6rem;
+    color: #484569;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0 10rem;
+}
+
+.weather-info-block {
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    column-gap: 2rem;
+    padding: 0 2rem;
+}
+
+.weather-info-block > div,
+.weather-info-block2 > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.weather-info-block2 {
+    width: 100%;
+    position: absolute;
+    bottom: -10rem;
+    display: flex;
+    column-gap: 2rem;
+    padding: 0 2rem;
+}
+
+.data-name {
+    font-size: 1.6rem;
+    color: #605d80
+}
+
+.weather-info-block i,
+.weather-info-block2 i {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: -.3rem .3rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.data {
+    font-size: 2rem;
+    color: #2f2e57;
+}
+
+.info {
+    position:absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+}
+
+.info > p > i {
+    cursor: pointer;
+}
+
+/* All css below is for info popup */
+.info-popup, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    
+}
+
+.overlay {
+    background: rgba(49, 49, 49, 0.8);
+}
+
+.popup-content {
+    position: absolute;
+    width: 60rem;
+    top: 8rem;
+    left: 2rem;
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 2rem;
+    border-radius: 3px;
+    z-index: 2000;
+}
+
+.popup-content > p {
+    font-size: 1.5rem;
+}
+
+.popup-content > i {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
