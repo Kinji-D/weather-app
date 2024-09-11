@@ -1,4 +1,4 @@
-/* Weather App By: Kinji Donald, created for PM Accelerator assessment */
+/* Weather App By: Kinji Donald */
 
 import { useEffect, useState } from 'react';
 import sun from "../assets/images/sunny.png";
@@ -17,7 +17,6 @@ const WeatherApp = () => {
     const [unit, setUnit] = useState('Imperial');
     const [celsius, setCelsius] = useState();
     const [fahrenheit, setFahrenheit] = useState("#94918d");
-    const [info, setInfo] = useState(false);
     const api_key = '2c2ae90b942d09670c9128cc635c6e23';
 
     //Default weather displayed as New York (my city) ideally would be set to user location
@@ -140,33 +139,11 @@ const WeatherApp = () => {
     //Format Date
     const formattedDate = `${dayOfWeek}, ${month} ${dayOfMonth}`
 
-    //Toggles info popup
-    const toggleInfo = () => {
-        setInfo(!info)
-    }
-
   return (
     <div className="container" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover'}}>
         <div className="info">
             <h1>By: Kinji Donald</h1>
-            <p>Powered by: PM Accelorator <i className="fa-solid fa-circle-info" onClick={toggleInfo}></i></p>
         </div>
-        {info && (
-        <div className="info-popup">
-            <div className="overlay" onClick={toggleInfo}></div>
-            <div className="popup-content">
-                <h1>PM Accelorator</h1>
-                <p>The Product Manager Accelerator Program is designed to support PM professionals through every stage of their career. 
-                    From students looking for entry-level jobs to Directors looking to take on a leadership role, our program has helped 
-                    over hundreds of students fulfill their career aspirations. <br />
-                    <br />
-                    Our Product Manager Accelerator community are ambitious and committed. Through our program they have learnt, honed and developed 
-                    new PM and leadership skills, giving them a strong foundation for their future endeavours.
-                </p>
-                <i class="fa-solid fa-circle-xmark" onClick={toggleInfo}></i>
-            </div>
-        </div>
-        )}
         <div className="weather-app" style={{ backgroundImage: appbackgroundImage}}>
             <div className="search">
                 <div className="location">
